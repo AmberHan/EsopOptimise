@@ -11,8 +11,8 @@ def getCpmn(key1, g1, key2, g2):
     M = key1 & MN
     N = key2 & MN
     # g1 g2得到具有相同控制线的正负
-    g1_CP_value = removeKeyValue(CP, key1, g1)
-    g2_CP_Value = removeKeyValue(CP, key2, g2)
+    g1_CP_value = retainKeyValue(CP, key1, g1)
+    g2_CP_Value = retainKeyValue(CP, key2, g2)
     C_value = ((1 << bin(CP).count('1')) - 1) ^ (g1_CP_value ^ g2_CP_Value)
     C = getValueKey(CP, C_value)
     P = CP ^ C
@@ -23,8 +23,8 @@ def getCpmn(key1, g1, key2, g2):
 def pKey(key1, g1, key2, g2):
     CP = key1 & key2
     # g1 g2得到具有相同控制线的正负
-    g1_CP_value = removeKeyValue(CP, key1, g1)
-    g2_CP_Value = removeKeyValue(CP, key2, g2)
+    g1_CP_value = retainKeyValue(CP, key1, g1)
+    g2_CP_Value = retainKeyValue(CP, key2, g2)
     C_value = ((1 << bin(CP).count('1')) - 1) ^ (g1_CP_value ^ g2_CP_Value)
     C = getValueKey(CP, C_value)
     P = CP ^ C
@@ -40,12 +40,12 @@ def getCpmnNumber(key1, key2):
     return CP, M, N
 
 
-# 计算出相同控制线CP在key中的value，移除非CP的1；计算CP下的value
+# 计算出相同控制线CP在key中的value，保留CP的1；计算CP下的value
 # re：   110010
 # Key:   111011
 # value: 010 10
 # output:01  1
-def removeKeyValue(removeKey, key, value):
+def retainKeyValue(removeKey, key, value):
     sums = 0
     counts = 0
     while key:
@@ -114,7 +114,7 @@ def getValueKey(key, value):
             key ^= last_key_one
         value >>= 1  # 去除最低位
         copy_key &= (copy_key - 1)  # 清除最后一个1
-    print(bin(key))
+    # print(bin(key))
     return key
 
 # getValueKey(0b11011011110000, 0b01010101)

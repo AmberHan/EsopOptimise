@@ -5,7 +5,7 @@
 # !@File   : esop.py
 import copy
 from tfcReadWrite import *
-
+from template.templates import *
 
 class esop:
     # key对应fx, value对应门
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     tt = esop(totalGates, inLine, outLine)
     print(tt.fxGates)  # 打印阶段1结果
     t.writeTxt(tt.fxGates)  # 阶段1写入文件
-    # 阶段2：处理 [(key,value),()], 进行模板匹配
+    # 阶段2：处理 [(key,value,0),(key,value,1)], 进行模板匹配
     pass
     # 阶段2输出：{f1f2:[(key,value,-1),(key,value,u)], f1:[(),()], f2:[(),()]}
     # 根据.v获取 in, outnum;建立索引
