@@ -4,6 +4,7 @@
 # !@Author : DongHan Yang
 # !@File   : esop.py
 import copy
+from tfcReadWrite import *
 
 
 class esop:
@@ -164,9 +165,19 @@ class esop:
 
 if __name__ == '__main__':
     # {f1:[(),(),()],f2:[(),(),()]}，inline,outline
-    totalGates = {0b1000: [(0b110, 0), (0b010, 1), (0b001, 1)], 0b0100: [(0b110, 3), (0b010, 1)],
-                  0b0010: [(0b001, 1), (0b011, 3)], 0b0001: [(0b001, 1)]}
-    # 阶段1输出：{f1f2:[(),()], f1:[(),()], f2:[(),()]}
-    t = esop(totalGates, 3, 4)
-    # 阶段2：处理 [(),()], 进行模板匹配
+    # totalGates = {0b1000: [(0b110, 0), (0b010, 1), (0b001, 1)], 0b0100: [(0b110, 3), (0b010, 1)],
+    #               0b0010: [(0b001, 1), (0b011, 3)], 0b0001: [(0b001, 1)]}
+    t = tfc("dec")
+    t.readTfc()
+    totalGates, inLine, outLine = t.retGatesDict, t.inNum, t.outNum
+    print(totalGates)
+    # 阶段1输出：{f1f2:[(key,value),()], f1:[(),()], f2:[(),()]}
+    tt = esop(totalGates, inLine, outLine)
+    print(tt.fxGates)  # 打印阶段1结果
+    t.writeTxt(tt.fxGates)  # 阶段1写入文件
+    # 阶段2：处理 [(key,value),()], 进行模板匹配
+    pass
+    # 阶段2输出：{f1f2:[(key,value,-1),(key,value,u)], f1:[(),()], f2:[(),()]}
+    # 根据.v获取 in, outnum;建立索引
+    # 根据key得知t4,根据key获取X0，X1；根据value得知+-；最后一个根据-1为key，正数为对应key
     pass
