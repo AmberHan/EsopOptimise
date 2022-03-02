@@ -98,8 +98,8 @@ class tfc:
             self.mct.append("t" + str(i + 1))
 
     # gates: {512: [(18, 3, 0), (29, 15, 0)],...}
-    def writeTxt(self, gates):
-        fileName = self.path + "new" + self.name
+    def writeTxt(self, gates, step):
+        fileName = self.path + "new" + str(step) + self.name
         with open(fileName, 'w') as f:
             f.write(self.top)
             f.write("BEGIN\n")
@@ -160,4 +160,4 @@ if __name__ == '__main__':
     t.readTfc()
     g = t.retGatesDict
     print(t.retGatesDict)
-    t.writeTxt(g)
+    t.writeTxt(g,0)

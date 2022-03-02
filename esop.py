@@ -5,7 +5,8 @@
 # !@File   : esop.py
 import copy
 from tfcReadWrite import *
-from template.templates import *
+from Match import *
+
 
 class esop:
     # key对应fx, value对应门
@@ -174,10 +175,21 @@ if __name__ == '__main__':
     # 阶段1输出：{f1f2:[(key,value),()], f1:[(),()], f2:[(),()]}
     tt = esop(totalGates, inLine, outLine)
     print(tt.fxGates)  # 打印阶段1结果
-    t.writeTxt(tt.fxGates)  # 阶段1写入文件
-    # 阶段2：处理 [(key,value,0),(key,value,1)], 进行模板匹配
+    t.writeTxt(tt.fxGates, 1)  # 阶段1写入文件
+    # 阶段2 统计剩下单个里面门key value相等的最大代价进行合并
+    # for fKey, gatesTupList in tt.fxGates.items():
+    #
+    #     pass
     pass
+    # 阶段2：处理 [(key,value,0),(key,value,1)], 进行模板匹配
+    newGatesDict = {}
+    for fKey, gatesTupList in tt.fxGates.items():
+        if len(gatesTupList) == 1:
+            newGatesDict[fKey] = gatesTupList
+        else:
+            mt = Match(fKey, gatesTupList, inLine)
+            newGatesDict[fKey] = mt.solveRetGatesList
+    t.writeTxt(newGatesDict, 2)
     # 阶段2输出：{f1f2:[(key,value,-1),(key,value,u)], f1:[(),()], f2:[(),()]}
     # 根据.v获取 in, outnum;建立索引
     # 根据key得知t4,根据key获取X0，X1；根据value得知+-；最后一个根据-1为key，正数为对应key
-    pass
