@@ -99,7 +99,7 @@ class tfc:
 
     # gates: {512: [(18, 3, 0), (29, 15, 0)],...}
     def writeTxt(self, gates, step):
-        fileName = self.path + "new" + str(step) + self.name
+        fileName = self.path + "testResult\\" + "phase" + str(step) + "_" + self.name
         with open(fileName, 'w') as f:
             f.write(self.top)
             f.write("BEGIN\n")
@@ -118,7 +118,17 @@ class tfc:
                     cnotStr = "t2 " + notC + "," + notT + "\n"
                     f.write(cnotStr)
                 elif bin(fKey).count('1') > 2:
-                    print("error")
+                    countKey = fKey
+                    while bin(countKey).count('1') > 1:
+                        cKey = countKey & (-countKey)  # 获取c
+                        fcIndex = int(math.log2(cKey))
+                        notC = self.fs[fcIndex]
+                        countKey &= (countKey - 1)  # 除去
+                        fKey = countKey & (-countKey)  # 获取t
+                        ftIndex = int(math.log2(fKey))
+                        notT = self.fs[ftIndex]
+                        cnotStr = "t2 " + notC + "," + notT + "\n"
+                        f.write(cnotStr)
             f.write("END")
         f.close()
 
@@ -155,9 +165,19 @@ class tfc:
         return ",".join(cList)
 
 
+def file_name(file_dir):
+    L = []
+    for root, dirs, files in os.walk(file_dir):
+        for file in files:
+            names = os.path.splitext(file)
+            if names[1] == '.tfc':  # 想要保存的文件格式
+                L.append(names[0])
+    return L
+
+
 if __name__ == '__main__':
     t = tfc("dec")
     t.readTfc()
     g = t.retGatesDict
     print(t.retGatesDict)
-    t.writeTxt(g,0)
+    t.writeTxt(g, 0)

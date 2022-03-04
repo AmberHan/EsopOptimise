@@ -138,7 +138,7 @@ class Oracle:
     def optimize1(self):
         gates = self.midGates
         # 最近邻排序
-        jb_blossom(self.midGates)
+        # jb_blossom(self.midGates)
         # 存放新的new_gates
         self.retGates = {}
         is_ret = True

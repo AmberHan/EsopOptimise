@@ -29,7 +29,7 @@ class Match:
         for gateTup in g:
             MCTs = MCT((gateTup[0], gateTup[1], 0), self.n)
             MCTList.append(MCTs)
-        # 第2个阶段匹配所有满足3和4
+        # 第2个阶段匹配所有满足3和4；34ok的
         retMctList34 = self.sloveMCTList(MCTList, 34)  # 得到34返回
         self.saveRetTup(retMctList34)  # 存储
         # 第3个阶段，进入56匹配
@@ -50,7 +50,7 @@ class Match:
         retMCTList = []
         while True:
             lenMct = len(MCTList)
-            if saveIndex == lenMct - 1 or lenMct == 0:
+            if saveIndex >= lenMct - 1 or lenMct == 0:
                 break
             for i in range(saveIndex, lenMct):
                 maxDecrease = 0

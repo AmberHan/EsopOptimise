@@ -9,7 +9,7 @@ import os.path
 class pla:
     def __init__(self, name):
         self.name = name
-        self.path = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + "benchmarks\\"
+        self.path = os.path.dirname(os.path.abspath(__file__)) + os.path.sep
         self.top = ""
         self.c = ""
         self.ends = ""
@@ -103,9 +103,21 @@ class pla:
         f.close()
 
 
+def file_name(file_dir):
+    L = []
+    for root, dirs, files in os.walk(file_dir):
+        for file in files:
+            names = os.path.splitext(file)
+            if names[1] == '.txt':  # 想要保存的文件格式
+                L.append(names[0])
+    return L
+
+
 if __name__ == '__main__':
-    strList = ["decc"]
-    for strl in strList:
+    path = os.path.dirname(os.path.abspath(__file__))
+    txtName = file_name(path)
+    print(txtName)
+    for strl in txtName:
         t = pla(strl)
         t.readPla()
         t.writeTfc()

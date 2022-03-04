@@ -254,6 +254,8 @@ class templateMatch:
             # 再对G1和G2进一步优化(C2,P0,M,N)
             p3 = templateMatch(g3, g4, self.n)
             opt = p3.template6Optimize()
+            if opt is None:
+                return []
             retList.extend(opt)
             retList.extend(cnotList)
             # self.finCost = opt.cost + len(cnotList) * 2 + p3.cost
