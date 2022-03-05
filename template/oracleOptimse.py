@@ -48,21 +48,27 @@ class Oracle:
         cost2 = [1, 1, 5, 13, 26, 38, 50, 62, 74, 86]
         for key, values in gates.items():
             cNums = bin(key).count('1')
-            if self.n - cNums >= cNums - 2:
-                if cNums <= 9:
-                    vc = cost2[cNums]
-                else:
-                    vc = 2 ** (cNums + 1) - 3
-            elif self.n - cNums >= 1:
-                if cNums <= 9:
-                    vc = cost1[cNums]
-                else:
-                    vc = 24 * (cNums + 1) - 88
+
+            if cNums <= 9:
+                vc = cost2[cNums]
             else:
-                if cNums <= 9:
-                    vc = cost0[cNums]
-                else:
-                    vc = 12 * (cNums + 1) - 34
+                vc = 12 * (cNums + 1) - 34
+
+            # if self.n - cNums >= cNums - 2:
+            #     if cNums <= 9:
+            #         vc = cost2[cNums]
+            #     else:
+            #         vc = 12 * (cNums + 1) - 34
+            # elif self.n - cNums >= 1:
+            #     if cNums <= 9:
+            #         vc = cost1[cNums]
+            #     else:
+            #         vc = 24 * (cNums + 1) - 88
+            # else:
+            #     if cNums <= 9:
+            #         vc = cost0[cNums]
+            #     else:
+            #         vc = 2 ** (cNums + 1) - 3
             for value in values:
                 gc += 1
                 qc += vc
@@ -204,8 +210,8 @@ def myOracle(n, tupList):
         if dictEqu(g, gg) and dictEqu(gg, g2):
             break
     g1.setNot()
-    print(f'阶段1局部后：', g)
-    print(g1.qc, g1.gc)
+    # print(f'阶段1局部后：', g)
+    # print(g1.qc, g1.gc)
     return dicToTup(g1.retGates)
 
 

@@ -14,6 +14,7 @@ class tfc:
         self.fs, self.cs, self.mct, self.inNum, self.outNum = [], [], [], 0, 0
         self.retGatesDict = {}
         self.top = ""
+        self.fnot = 0
 
     def readTfc(self):
         self.getTop()
@@ -106,6 +107,9 @@ class tfc:
             for fKey, gatesList in gates.items():
                 for gateTup in gatesList:
                     key, value, ft = gateTup[0], gateTup[1], gateTup[2]
+                    if bin(key) == 1 and value == 0:  # cnot 取反
+                        value = 1
+                        self.fnot ^= fKey
                     gateStr = self.getGateStr(fKey, key, value, ft)
                     f.write(gateStr)
                 if bin(fKey).count('1') == 2:
@@ -129,6 +133,12 @@ class tfc:
                         notT = self.fs[ftIndex]
                         cnotStr = "t2 " + notC + "," + notT + "\n"
                         f.write(cnotStr)
+            while self.fnot:
+                low = self.fnot & (self.fnot - 1)
+                flow = int(math.log2(low))
+                notStr = "t1 " + self.fs[flow] + notT + "\n"
+                f.write(notStr)
+                self.fnot &= (-self.fnot)
             f.write("END")
         f.close()
 

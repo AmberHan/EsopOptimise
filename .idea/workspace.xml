@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a752c918-67c1-49c8-af5a-8d9fc7b17697" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/benchmarks/alu2_199.tfc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmarks/in2_236.tfc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmarks/z4ml_269.tfc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Match.py" beforeDir="false" afterPath="$PROJECT_DIR$/Match.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/decc.tfc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/decc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/newdec.tfc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/cu_219.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/cu_219.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/frg1_234.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/frg1_234.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_5xp.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_5xp.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_5xp1_194.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_5xp1_194.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_alu2_199.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_alu2_199.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_apex4_202.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_apex4_202.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_apla_203.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_apla_203.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_clip_206.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_clip_206.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_cm150a_210.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_cm150a_210.tfc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/testResult/phase2_cordic_218.tfc" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/testResult/phase2_cordic_218.tfc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/esop.py" beforeDir="false" afterPath="$PROJECT_DIR$/esop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plaTotfc.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/txt/plaTotfc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/oracleOptimse.py" beforeDir="false" afterPath="$PROJECT_DIR$/template/oracleOptimse.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/templates.py" beforeDir="false" afterPath="$PROJECT_DIR$/template/templates.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tfcReadWrite.py" beforeDir="false" afterPath="$PROJECT_DIR$/tfcReadWrite.py" afterDir="false" />
@@ -25,55 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/esop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="229" column="39" lean-forward="true" selection-start-line="229" selection-start-column="39" selection-end-line="229" selection-end-column="39" />
+            <state relative-caret-position="184">
+              <caret line="234" column="14" selection-start-line="234" selection-start-column="14" selection-end-line="234" selection-end-column="14" />
               <folding>
                 <element signature="e#123#149#0" expanded="true" />
-                <element signature="e#4109#4492#0" />
-                <element signature="e#4696#5552#0" />
-                <element signature="e#5616#5808#0" />
-                <element signature="e#6051#6492#0" />
-                <element signature="e#6548#6657#0" />
-                <element signature="e#6720#6869#0" />
-                <element signature="e#6926#7686#0" />
-                <element signature="e#7735#7978#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/alu2_199.tfc">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/in2_236.tfc">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/txt/plaTotfc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/z4ml_269.tfc">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Match.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="36" selection-end-column="44" />
+            <state relative-caret-position="207">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="42" />
               <folding>
                 <element signature="e#123#134#0" expanded="true" />
               </folding>
@@ -82,43 +52,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/templates.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="243" column="17" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="17" />
+              <folding>
+                <element signature="e#129#156#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/oracleOptimse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="208" selection-start-line="208" selection-end-line="208" />
+            <state relative-caret-position="460">
+              <caret line="70" column="47" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="70" selection-end-column="47" />
               <folding>
                 <element signature="e#268#281#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/mode1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tfcReadWrite.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="167" selection-start-line="167" selection-end-line="174" selection-end-column="12" />
-              <folding>
-                <element signature="e#131#145#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/cordic_218.tfc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="251" column="15" selection-start-line="251" selection-start-column="13" selection-end-line="251" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -134,36 +86,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.totalGates</find>
-      <find>self.cs</find>
-      <find>'</find>
-      <find>error</find>
-      <find>jb_blossom</find>
-      <find>nowCostKey</find>
-      <find>myOracle</find>
-      <find>template6</find>
-      <find>pValue一位</find>
-      <find>optimize6</find>
-      <find>sloveMCTList</find>
-      <find>getMaxCost</find>
-      <find>x0,x4,x5,x6'</find>
-      <find>f9</find>
-      <find>x0',x1,x2,x3,x4,x5,x6'</find>
-      <find>f8</find>
-      <find>t2 x3'</find>
-      <find>t2 x5</find>
-      <find>t5 x0,x1,x4,x5'</find>
-      <find>t7 x0',x1',x2',x4',x5,x6</find>
-      <find>t7 x0,x1,x2',x3',x5',x6'</find>
-      <find>t5 x0,x4,x5,x6'</find>
-      <find>t8 x0',x1,x2,x3,x4,x5,x6'</find>
-      <find>t8 x0',x1',x2,x3',x4',x5,x6</find>
-      <find>t5 x0,x1,x5',x6</find>
-      <find>f1</find>
-      <find>t2 f0,f1</find>
       <find>0'</find>
       <find>os.path</find>
       <find>self.fxGates</find>
+      <find>self.n</find>
+      <find>self.reduceCost</find>
+      <find>template4</find>
+      <find>-</find>
+      <find>z4ml_2</find>
+      <find>optimize</find>
+      <find>1</find>
+      <find>pvalue</find>
+      <find>pValue一位</find>
+      <find>set</find>
+      <find>print</find>
+      <find>template1</find>
+      <find>optimize5</find>
+      <find>template5</find>
+      <find>template2</find>
+      <find>cm150a_210</find>
+      <find>sloveMCTList</find>
+      <find>[1, 1, 5, 13, 29, 61, 125, 253, 509, 1021]</find>
+      <find>reduceCost</find>
+      <find>setCost</find>
+      <find>No</find>
+      <find>cost</find>
+      <find>cal</find>
+      <find>calCost</find>
+      <find>cost0</find>
+      <find>None</find>
+      <find>template6Optimize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,20 +131,21 @@
         <option value="$PROJECT_DIR$/plaTotfc.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/benchmarks/cordic_218.tfc" />
-        <option value="$PROJECT_DIR$/template/oracleOptimse.py" />
-        <option value="$PROJECT_DIR$/template/templates.py" />
         <option value="$PROJECT_DIR$/benchmarks/new1new15xp.tfc" />
         <option value="$PROJECT_DIR$/benchmarks/5xp.tfc" />
         <option value="$PROJECT_DIR$/benchmarks/new15xp.tfc" />
         <option value="$PROJECT_DIR$/benchmarks/readname.py" />
-        <option value="$PROJECT_DIR$/tfcReadWrite.py" />
         <option value="$PROJECT_DIR$/benchmarks/txt/plaTotfc.py" />
-        <option value="$PROJECT_DIR$/esop.py" />
+        <option value="$PROJECT_DIR$/tfcReadWrite.py" />
+        <option value="$PROJECT_DIR$/benchmarks/testResult/phase2_alu2_199.tfc" />
+        <option value="$PROJECT_DIR$/template/oracleOptimse.py" />
+        <option value="$PROJECT_DIR$/template/templates.py" />
         <option value="$PROJECT_DIR$/Match.py" />
+        <option value="$PROJECT_DIR$/esop.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="1944" />
@@ -217,13 +170,7 @@
             <path>
               <item name="EsopOptimise" type="b2602c69:ProjectViewProjectNode" />
               <item name="EsopOptimise" type="462c0819:PsiDirectoryNode" />
-              <item name="benchmarks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EsopOptimise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EsopOptimise" type="462c0819:PsiDirectoryNode" />
-              <item name="benchmarks" type="462c0819:PsiDirectoryNode" />
-              <item name="txt" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -343,7 +290,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="readname" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="templates" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="EsopOptimise" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -351,11 +298,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/benchmarks" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/template" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benchmarks/readname.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/template/templates.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -367,10 +314,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.esop" />
+        <item itemvalue="Python.templates" />
         <item itemvalue="Python.plaTotfc (1)" />
-        <item itemvalue="Python.plaTotfc" />
-        <item itemvalue="Python.readname" />
         <item itemvalue="Python.Match" />
+        <item itemvalue="Python.plaTotfc" />
       </list>
     </recent_temporary>
   </component>
@@ -405,15 +352,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.23747681" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3320965" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.30241188" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16883117" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6103896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3283859" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3283859" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.716141" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.54359925" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -424,17 +371,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/template/templates.py</url>
-          <line>396</line>
+          <line>469</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/template/templates.py</url>
-          <line>390</line>
+          <line>463</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/template/templates.py</url>
-          <line>389</line>
+          <line>462</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -444,33 +391,53 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/esop.py</url>
-          <line>58</line>
+          <line>60</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tfcReadWrite.py</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/esop.py</url>
-          <line>239</line>
+          <line>249</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/esop.py</url>
-          <line>75</line>
+          <line>77</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/template/oracleOptimse.py</url>
-          <line>208</line>
-          <option name="timeStamp" value="153" />
+          <url>file://$PROJECT_DIR$/esop.py</url>
+          <line>238</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/template/templates.py</url>
+          <line>310</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/template/templates.py</url>
+          <line>452</line>
+          <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Match.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="154" />
+          <line>78</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/template/templates.py</url>
+          <line>457</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/template/templates.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -485,47 +452,47 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>path</expression-string>
+        <expression-string>gatesList</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.path.splitext(file)</expression-string>
+        <expression-string>MCT2.cost</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>files</expression-string>
+        <expression-string>MCT1.cost</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.walk(file_dir)</expression-string>
+        <expression-string>bin(111)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>f</expression-string>
+        <expression-string>p6.reduceCost</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>l</expression-string>
+        <expression-string>bin(127)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>1&lt;&lt;10</expression-string>
+        <expression-string>bin(Cu)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self.outLineNum</expression-string>
+        <expression-string>Cu</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self.table1</expression-string>
+        <expression-string>bin(self.value1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -559,24 +526,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/cpmn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/benchmarks/dec.tfc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
           <caret line="41" column="15" lean-forward="true" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/templates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="272" selection-start-line="272" selection-end-line="272" />
         </state>
       </provider>
     </entry>
@@ -640,9 +593,6 @@
         <state relative-caret-position="-404" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/cm150a_210.tfc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/benchmarks/cordic_218.tfc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -657,18 +607,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/z4ml_269.tfc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/in2_236.tfc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/alu2_199.tfc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/txt/plaTotfc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/cm150a_210.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tfcReadWrite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="167" selection-start-line="167" selection-end-line="174" selection-end-column="12" />
+        <state relative-caret-position="284">
+          <caret line="136" column="49" lean-forward="true" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="49" />
           <folding>
             <element signature="e#131#145#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/z4ml_269.tfc">
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_apex4_202.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129856" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_apla_203.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1286" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_clip_206.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6760" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_cordic_218.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123531" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_alu2_199.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_5xp1_194.tfc">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/testResult/phase2_5xp.tfc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="13" lean-forward="true" selection-end-line="80" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/cpmn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/mode1.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -679,51 +693,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/oracleOptimse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
+        <state relative-caret-position="460">
+          <caret line="70" column="47" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="70" selection-end-column="47" />
           <folding>
             <element signature="e#268#281#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/in2_236.tfc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/txt/plaTotfc.py">
+    <entry file="file://$PROJECT_DIR$/template/templates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/alu2_199.tfc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/esop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="229" column="39" lean-forward="true" selection-start-line="229" selection-start-column="39" selection-end-line="229" selection-end-column="39" />
+        <state relative-caret-position="130">
+          <caret line="243" column="17" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="17" />
           <folding>
-            <element signature="e#123#149#0" expanded="true" />
-            <element signature="e#4109#4492#0" />
-            <element signature="e#4696#5552#0" />
-            <element signature="e#5616#5808#0" />
-            <element signature="e#6051#6492#0" />
-            <element signature="e#6548#6657#0" />
-            <element signature="e#6720#6869#0" />
-            <element signature="e#6926#7686#0" />
-            <element signature="e#7735#7978#0" />
+            <element signature="e#129#156#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Match.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="36" selection-end-column="44" />
+        <state relative-caret-position="207">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="42" />
           <folding>
             <element signature="e#123#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/esop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="234" column="14" selection-start-line="234" selection-start-column="14" selection-end-line="234" selection-end-column="14" />
+          <folding>
+            <element signature="e#123#149#0" expanded="true" />
           </folding>
         </state>
       </provider>

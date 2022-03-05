@@ -29,12 +29,17 @@ class Match:
         for gateTup in g:
             MCTs = MCT((gateTup[0], gateTup[1], 0), self.n)
             MCTList.append(MCTs)
-        # 第2个阶段匹配所有满足3和4；34ok的
+        # list类排序
+        MCTList = sorted(MCTList, key=lambda box: box.key, reverse=True)
+        # 第2个阶段匹配所有满足3和4；同时排序选择优化最大的
         retMctList34 = self.sloveMCTList(MCTList, 34)  # 得到34返回
         self.saveRetTup(retMctList34)  # 存储
-        # 第3个阶段，进入56匹配
-        retMctList6 = self.sloveMCTList(MCTList, 56)  # 得到34返回
+        # 第3个阶段，进入6匹配
+        retMctList6 = self.sloveMCTList(MCTList, 6)  # 得到6返回
         self.saveRetTup(retMctList6)  # 存储
+        # 第3个阶段匹配所有满足5的
+        retMctList5 = self.sloveMCTList(MCTList, 5)  # 得到5返回
+        self.saveRetTup(retMctList5)  # 存储
         # 无匹配的附加
         self.saveRetTup(MCTList)  # 存储
 
@@ -60,14 +65,18 @@ class Match:
                 for j in range(i + 1, lenMct):
                     t = templateMatch(MCTList[i], MCTList[j], self.n)
                     if type == 34:
-                        t.optimize12()
-                    else:
+                        t.optimize34()
+                    elif type == 5:
+                        t.optimize5()
+                    elif type == 6:
                         t.optimize6()
                     if maxDecrease < t.reduceCost:
                         maxDecrease = t.reduceCost
                         mctIndex = j
                         mtt = t
                 if mctIndex > -1:
+                    if type == 6:
+                        print("type6")
                     MCTList.remove(MCTList[mctIndex])
                     MCTList.remove(MCTList[i])
                     retMCTList.extend(mtt.retMCTList)

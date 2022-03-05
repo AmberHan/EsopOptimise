@@ -5,6 +5,8 @@
 # !@File   : esop.py
 from tfcReadWrite import *
 from Match import *
+
+
 # from benchmarks.readname import *
 
 
@@ -191,7 +193,7 @@ class esop:
             if cNums <= 9:
                 vc = cost2[cNums]
             else:
-                vc = 2 ** (cNums + 1) - 3
+                vc = 12 * (cNums + 1) - 34
         elif n - cNums >= 1:
             if cNums <= 9:
                 vc = cost1[cNums]
@@ -201,7 +203,7 @@ class esop:
             if cNums <= 9:
                 vc = cost0[cNums]
             else:
-                vc = 12 * (cNums + 1) - 34
+                vc = 2 ** (cNums + 1) - 3
         if gatesTup[1] == 0:
             vc += 1
         return vc
@@ -226,8 +228,16 @@ if __name__ == '__main__':
     path = os.path.dirname(os.path.abspath(__file__))
     allBenchmarks = file_name(path + "\\benchmarks")
     # print(allBenchmarks)
-    allBenchmarks = ["alu2_199"]
+    mmp = ['5xp', '5xp1_194', 'alu2_199', 'apex4_202', 'apla_203', 'clip_206', 'cm150a_210', 'cordic_218', 'cu_219',
+           'dc1_221', 'dc2_222', 'dec', 'decod_217', 'dist_223', 'f51m_233', 'frg1_234', 'in0_235', 'in2_236',
+           'inc_237',
+           'life_238', 'table3_264', 'z4ml_269', 'z4_268', 'alu2_199', 'in2_236',
+           '  ',
+           'z4ml_269', 'z4_268']
+
+    allBenchmarks = ["cm150a_210"]
     for benchmarkName in allBenchmarks:
+        print(benchmarkName)
         t = tfc(benchmarkName)
         t.readTfc()
         totalGates, inLine, outLine = t.retGatesDict, t.inNum, t.outNum
