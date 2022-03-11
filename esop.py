@@ -280,12 +280,12 @@ if __name__ == '__main__':
     path = os.path.dirname(os.path.abspath(__file__))
     allBenchmarks = file_name(path + "\\benchmarks")
     # print(allBenchmarks)
-    mmp = ['5xp', '5xp1_194', 'alu2_199', 'apex4_202', 'apla_203', 'clip_206', 'cm150a_210', 'cordic_218', 'cu_219',
-           'dc1_221', 'dc2_222', 'dec', 'decod_217', 'dist_223', 'f51m_233', 'frg1_234', 'in0_235', 'in2_236',
-           'inc_237',
-           'life_238', 'table3_264', 'z4ml_269', 'z4_268', 'alu2_199', 'in2_236',
-           'table3_264',
-           'z4ml_269', 'z4_268']
+    # mmp = ['5xp', '5xp1_194', 'alu2_199', 'apex4_202', 'apla_203', 'clip_206', 'cm150a_210', 'cordic_218', 'cu_219',
+    #        'dc1_221', 'dc2_222', 'dec', 'decod_217', 'dist_223', 'f51m_233', 'frg1_234', 'in0_235', 'in2_236',
+    #        'inc_237',
+    #        'life_238', 'table3_264', 'z4ml_269', 'z4_268', 'alu2_199', 'in2_236',
+    #        'table3_264',
+    #        'z4ml_269', 'z4_268']
 
     allBenchmarks = ['f2_232', 'wim_266', 'dc1_221', 'ex2_227', 'ex3_229', 'C17_204', 'C7552_205', 'cm82a_208',
                      'rd53_251', 'squar5_261', 'C7552_205', 'con1_216', 'rd73_252', 'z4_268', 'z4ml_269', 'sqrt8_260',
