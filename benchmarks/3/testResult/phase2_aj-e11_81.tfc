@@ -1,0 +1,32 @@
+.v f3,f2,f1,f0,x3,x2,x1,x0
+.i x3,x2,x1,x0
+.o f3,f2,f1,f0
+.c 0,0,0,0
+BEGIN
+t2 x1',x0
+t3 x0',x3,x1
+t3 x1',x2,f0
+t3 x0',x3,x1
+t2 x1',x0
+t4 x0',x1,x2',f0
+t2 x2,f0
+t2 x1,f0
+t1 f0
+t2 f0,f2
+t2 x1',x0
+t3 x0,x3,x1
+t3 x1',x2',f1
+t3 x0,x3,x1
+t2 x1',x0
+t2 x3,f1
+t4 x0',x1,x2',f1
+t2 x2,f1
+t1 f1
+t2 f1,f3
+t3 x0,x3',f0
+t3 x1',x3,f1
+t3 x0,x3',f1
+t3 x0',x3,f2
+t2 x2,f2
+t1 f2
+END

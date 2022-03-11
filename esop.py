@@ -15,6 +15,7 @@ class esop:
     # totalGates: {1:[(key,value)],10:[(key,value),(key1,value1)]}
     def __init__(self, totalGates, inLineNum, outLineNum):
         self.totalGates = totalGates
+        self.unUsed = (1 << outLineNum) - 1
         self.inLineNum = inLineNum
         self.outLineNum = outLineNum
         self.lines2 = self.getLines()  # 所有2的组合
@@ -71,11 +72,62 @@ class esop:
                 maxCost, col = dp[m - 1][mcIndex], mcIndex
         maxCost1 = dp1[m - 1][col]  # 最大代价路径
         sameNum = 0
+        multList = []
         for index in range(len(dp[m - 1])):
             if dp[m - 1][index] == maxCost and set(maxCost1) != set(dp1[m - 1][index]):
                 sameNum += 1
+                multList.append(dp1[m - 1][index])
         print(f"存在{sameNum}解")
+        print(multList)
+        # print(maxCost1
         return maxCost1
+
+    #
+
+    # table2Cost: {0011: totalCost, 0101: totalCost1}
+    # table2CostKey: [0011,1100]
+    # def getMaxCost(self):
+    #     table2Cost = self.table2Cost  # 读取代价
+    #     table2CostKey = self.table2CostKey
+    #     m = self.outLineNum // 2
+    #     maxCostPath = {}
+    #     # 初始化
+    #     maxCost = copy.deepcopy(table2Cost)  # 记录最大代价
+    #     for path in table2CostKey:
+    #         maxCostPath[path] = -1  # 记录上一个路径
+    #     # 迭代
+    #     mm = 2
+    #     for i in range(2, m + 1):
+    #         chooseList = self.calOneList(i * 2)
+    #         for choose in chooseList:
+    #             # maxCost[choose] = 0
+    #             for gKey in table2CostKey:
+    #                 if choose & gKey == gKey and choose ^ gKey in maxCost:
+    #                     newCost = maxCost[choose ^ gKey] + table2Cost[gKey]
+    #                     if choose not in maxCost:
+    #                         maxCost[choose] = newCost
+    #                         maxCostPath[choose] = choose ^ gKey  # 记录上一步
+    #                     elif newCost > maxCost[choose]:
+    #                         maxCost[choose] = newCost
+    #                         maxCostPath[choose] = choose ^ gKey  # 记录上一步
+    #                     mm = m
+    #     retChoose = self.calOneList(mm * 2)  # 防止迭代不到
+    #     maxchoose = 0
+    #     maxpath = 0
+    #     for ret in retChoose:
+    #         if ret in maxCost and maxCost[ret] > maxchoose:
+    #             maxchoose = maxCost[ret]
+    #             maxpath = ret
+    #     retPath = []
+    #     self.unUsed ^= maxpath
+    #     if maxpath != 0:
+    #         while maxCostPath[maxpath] != -1:
+    #             lastChoose = maxCostPath[maxpath]
+    #             retPath.append(maxpath ^ lastChoose)
+    #             maxpath = lastChoose
+    #         retPath.append(maxpath)
+    #         print(retPath)
+    #     return retPath
 
     # 维护表1，进行选择门
     # fxGates  {0001:[(key,value),(key,value),(key,value)],0011:[(key,value),(key,value),(key,value)]}
@@ -146,8 +198,8 @@ class esop:
     # 生成多个1所有情况；>2
     def calOneList(self, oneNums):
         oneList = []
-        numss = (1 << self.outLineNum) - 1
-        for i in range(numss + 1):
+        numss = 1 << self.outLineNum
+        for i in range(numss):
             if bin(i).count('1') == oneNums:
                 oneList.append(i)
         return oneList
@@ -232,10 +284,14 @@ if __name__ == '__main__':
            'dc1_221', 'dc2_222', 'dec', 'decod_217', 'dist_223', 'f51m_233', 'frg1_234', 'in0_235', 'in2_236',
            'inc_237',
            'life_238', 'table3_264', 'z4ml_269', 'z4_268', 'alu2_199', 'in2_236',
-           '  ',
+           'table3_264',
            'z4ml_269', 'z4_268']
 
-    allBenchmarks = ["cm150a_210"]
+    allBenchmarks = ['f2_232', 'wim_266', 'dc1_221', 'ex2_227', 'ex3_229', 'C17_204', 'C7552_205', 'cm82a_208',
+                     'rd53_251', 'squar5_261', 'C7552_205', 'con1_216', 'rd73_252', 'z4_268', 'z4ml_269', 'sqrt8_260',
+                     'misex1_241', 'dk27_225', 'max46_240', 'add6_196', 'alu1_198', 't481_263', 'pcler8_248', 'mux_246']
+    # 'cordic_218']
+    allBenchmarks = ['aj-e11_81']
     for benchmarkName in allBenchmarks:
         print(benchmarkName)
         t = tfc(benchmarkName)
@@ -244,11 +300,13 @@ if __name__ == '__main__':
         print(totalGates)
         # 阶段0 统计门的最大代价共享
         # 阶段1输出：{f1f2:[(key,value),()], f1:[(),()], f2:[(),()]}
+        unUsed = (1 << outLine) - 1
         if outLine > 1:
             tt = esop(totalGates, inLine, outLine)
             totalGates = tt.fxGates
             print(totalGates)  # 打印阶段1结果
-            t.writeTxt(totalGates, 1)  # 阶段1写入文件
+            unUsed = tt.unUsed
+            t.writeTxt(totalGates, 1, tt.unUsed)  # 阶段1写入文件
 
         # 阶段2：处理 [(key,value,0),(key,value,1)], 进行模板匹配
         newGatesDict = {}
@@ -256,9 +314,10 @@ if __name__ == '__main__':
             if len(gatesTupList) == 1:
                 newGatesDict[fKey] = gatesTupList
             else:
-                mt = Match(fKey, gatesTupList, inLine)
+                unU = unUsed ^ (fKey & unUsed)
+                mt = Match(fKey, gatesTupList, inLine, unU)
                 newGatesDict[fKey] = mt.solveRetGatesList
-        t.writeTxt(newGatesDict, 2)
+        t.writeTxt(newGatesDict, 2, unUsed)
         # 阶段2输出：{f1f2:[(key,value,-1),(key,value,u)], f1:[(),()], f2:[(),()]}
         # 根据.v获取 in, outnum;建立索引
         # 根据key得知t4,根据key获取X0，X1；根据value得知+-；最后一个根据-1为key，正数为对应key

@@ -9,9 +9,10 @@ from template.templates import *
 
 
 class Match:
-    def __init__(self, fKey, gatesTupList, n):
+    def __init__(self, fKey, gatesTupList, n, unused):
         # [(29, 15, 0), (17, 3, 0),...]
         self.oldGates = gatesTupList
+        self.unused = unused
         self.fKey = fKey
         self.retGates = []
         self.n = n
@@ -63,12 +64,14 @@ class Match:
                 if i == lenMct - 1:
                     saveIndex = lenMct - 1
                 for j in range(i + 1, lenMct):
-                    t = templateMatch(MCTList[i], MCTList[j], self.n)
+                    t = templateMatch(MCTList[i], MCTList[j], self.n, self.unused)
                     if type == 34:
                         t.optimize34()
                     elif type == 5:
                         t.optimize5()
+                        # pass
                     elif type == 6:
+                        # pass
                         t.optimize6()
                     if maxDecrease < t.reduceCost:
                         maxDecrease = t.reduceCost

@@ -10,7 +10,8 @@ import math
 class tfc:
     def __init__(self, name):
         self.name = name + ".tfc"
-        self.path = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + "benchmarks\\"
+        # self.path1 = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + "benchmarks\\3\\"
+        self.path = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + "benchmarks\\3\\"
         self.fs, self.cs, self.mct, self.inNum, self.outNum = [], [], [], 0, 0
         self.retGatesDict = {}
         self.top = ""
@@ -22,7 +23,7 @@ class tfc:
 
     # 存放门{f1:[(),(),()],f2:[(),(),()]}
     def getGates(self):
-        fileName = self.path + self.name
+        fileName = self.path + "tfc\\" + self.name
         with open(fileName, 'r') as f:
             c = f.readline()
             while c.count('BEGIN') != 1:
@@ -66,7 +67,7 @@ class tfc:
 
     # 存放头部信息，以及初始化f和c
     def getTop(self):
-        fileName = self.path + self.name
+        fileName = self.path + "tfc\\" + self.name
         with open(fileName, 'r') as f:
             topStr = ""
             c = f.readline()
@@ -99,8 +100,12 @@ class tfc:
             self.mct.append("t" + str(i + 1))
 
     # gates: {512: [(18, 3, 0), (29, 15, 0)],...}
-    def writeTxt(self, gates, step):
+    def writeTxt(self, gates, step, unused):
         fileName = self.path + "testResult\\" + "phase" + str(step) + "_" + self.name
+        try:
+            os.remove(fileName)
+        except:
+            print("移除失败")
         with open(fileName, 'w') as f:
             f.write(self.top)
             f.write("BEGIN\n")
@@ -110,7 +115,7 @@ class tfc:
                     if bin(key) == 1 and value == 0:  # cnot 取反
                         value = 1
                         self.fnot ^= fKey
-                    gateStr = self.getGateStr(fKey, key, value, ft)
+                    gateStr = self.getGateStr(fKey, key, value, ft, unused)
                     f.write(gateStr)
                 if bin(fKey).count('1') == 2:
                     cKey = fKey & (-fKey)
@@ -143,21 +148,61 @@ class tfc:
         f.close()
 
     # 获取门序列
-    def getGateStr(self, fKey, key, value, ft):
+    # def getGateStr(self, fKey, key, value, ft):
+    #     fIndex = bin(key).count('1')
+    #     gateStr = self.mct[fIndex] + ' '
+    #     ckey = fKey & (-fKey)
+    #     if ft == 0:
+    #         # fKey &= (-fKey)  # 获取最低位1
+    #         fcIndex = int(math.log2(ckey))
+    #         ftStr = self.fs[fcIndex]
+    #     else:
+    #         fcIndex = int(math.log2(ft))
+    #         ftStr = self.cs[fcIndex]
+    #
+    #     cStr = self.getControlGate(key, value)
+    #     if cStr == '':
+    #         retStr = gateStr + ftStr + "\n"
+    #     else:
+    #         retStr = gateStr + cStr + "," + ftStr + "\n"
+    #     return retStr
+    #
+
+    # 使用受控线
+    def getGateStr(self, fKey, key, value, ft, unused):
         fIndex = bin(key).count('1')
         gateStr = self.mct[fIndex] + ' '
-        if ft == 0:
-            fKey &= (-fKey)  # 获取最低位1
-            fcIndex = int(math.log2(fKey))
-            ftStr = self.fs[fcIndex]
-        else:
+        ckey = fKey & (-fKey)
+        if ft > 0:
             fcIndex = int(math.log2(ft))
             ftStr = self.cs[fcIndex]
+        elif ft == -1:
+            # 模板5的g1
+            common = ckey & unused
+            usedf = common ^ unused
+            if usedf != 0:
+                usedf &= (usedf - 1)
+                fcIndex = int(math.log2(usedf))
+                ftStr = self.fs[fcIndex]
+        else:  # if ft == 0:为0和-2时候，表示受控点在f上
+            # fKey &= (-fKey)  # 获取最低位1
+            fcIndex = int(math.log2(ckey))
+            ftStr = self.fs[fcIndex]
         cStr = self.getControlGate(key, value)
         if cStr == '':
             retStr = gateStr + ftStr + "\n"
         else:
             retStr = gateStr + cStr + "," + ftStr + "\n"
+        if ft == -2:  # 需要新增一个控制点 u,修改t
+            retlst = retStr.split(' ')
+            tn = int(retlst[0][1]) + 1  # 修改t
+            common = ckey & unused
+            usedf = common ^ unused
+            if usedf != 0:
+                usedf &= (usedf - 1)
+                fccIndex = int(math.log2(usedf))
+                fttStr = self.fs[fccIndex]
+                retStr = "t" + str(tn) + " " + fttStr + "," + retlst[1]
         return retStr
 
     # 根据key,value,返回x0,x1'
@@ -190,4 +235,4 @@ if __name__ == '__main__':
     t.readTfc()
     g = t.retGatesDict
     print(t.retGatesDict)
-    t.writeTxt(g, 0)
+    t.writeTxt(g, 0, 0)

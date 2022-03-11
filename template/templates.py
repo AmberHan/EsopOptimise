@@ -55,9 +55,10 @@ class MCT:
 
 
 class templateMatch:
-    def __init__(self, MCT1, MCT2, n):
+    def __init__(self, MCT1, MCT2, n, unsed):
         key1 = MCT1.key
         key2 = MCT2.key
+        self.unsed = unsed #提出f后的
         value1 = MCT1.value
         value2 = MCT2.value
         self.n = n
@@ -123,7 +124,7 @@ class templateMatch:
             g1 = MCT((big, newValue, 0), self.n)
             g2 = MCT((newKey, newValue1, 0), self.n)
 
-            p6 = templateMatch(g1, g2, self.n)
+            p6 = templateMatch(g1, g2, self.n, self.unsed)
             opt = p6.template5()
             if opt is not None:
                 # and p6.reduceCost > 0:
@@ -212,33 +213,39 @@ class templateMatch:
         C, P, M, N = getCpmn(key1, value1, key2, value2)
         allKeys = C ^ P ^ M ^ N
         # if bin(P).count('1') == 1 and bin(allKeys).count('1') < self.n:  # 有其他条件
-        if bin(allKeys).count('1') < self.n:
-            unUsed = ((1 << self.n) - 1) ^ allKeys
-            u = unUsed & (-unUsed)  # target
+
+        if bin(C).count('1') > bin(P ^ M ^ N).count('1'):
             PM = P ^ M
             PN = P ^ N
-            # if PM != 0 and PN != 0:
             pmValue1 = retainKeyValue(PM, key1, value1)
-            g1 = MCT((PM, pmValue1, u), self.n)
             pmValue2 = retainKeyValue(PN, key2, value2)
-            g3 = MCT((PN, pmValue2, u), self.n)
-            Cu = C ^ u
             cValue = retainKeyValue(C, key1, value1)
-            cuValue = insertKeyValue(Cu, C, cValue)
-            g2 = MCT((Cu, cuValue, 0), self.n)
-
-            # global setGate
-            # setGate.extend([g1, g2, g1, g3, g2, g3])
-            lst = [g1, g2, g1, g3, g2, g3]
-            retLst = []
-            for re in lst:
-                if re.key == 0 and re.value == 0:
-                    continue
-                retLst.append(re)
-            self.setCost(retLst)
-            return retLst
-            # self.setCost([g1, g2, g1, g3, g2, g3])
-            # return [g1, g2, g1, g3, g2, g3]
+            if bin(allKeys).count('1') < self.n or self.unsed != 0:
+                if bin(allKeys).count('1') < self.n:
+                    unUsed = ((1 << self.n) - 1) ^ allKeys
+                    u = unUsed & (-unUsed)  # target
+                    Cu = C ^ u
+                    # cValue = retainKeyValue(C, key1, value1)
+                    cuValue = insertKeyValue(Cu, C, cValue)
+                    g1 = MCT((PM, pmValue1, u), self.n)
+                    g3 = MCT((PN, pmValue2, u), self.n)
+                    g2 = MCT((Cu, cuValue, 0), self.n)
+                elif self.unsed != 0:  # xz，添加受控线
+                    print("*"*100)
+                    g1 = MCT((PM, pmValue1, -1), self.n)
+                    g3 = MCT((PN, pmValue2, -1), self.n)
+                    # cValue1 = retainKeyValue(C, key1, value1)  # Cu
+                    g2 = MCT((C, cValue, -2), self.n)
+                    if C == 0:
+                        print("T5无C，底下value==0有误")
+                lst = [g1, g2, g1, g3, g2, g3]
+                retLst = []
+                for re in lst:
+                    if re.key == 0 and re.value == 0:
+                        continue
+                    retLst.append(re)
+                self.setCost(retLst)
+                return retLst
 
     # 满足模板6
     def template6(self):
@@ -285,7 +292,7 @@ class templateMatch:
             retList = []
             retList.extend(cnotList)
             # 再对G1和G2进一步优化(C2,P0,M,N)
-            p3 = templateMatch(g3, g4, self.n)
+            p3 = templateMatch(g3, g4, self.n, self.unsed)
             opt = p3.template6Optimize()
             if opt is None:
                 self.reduceCost = 0

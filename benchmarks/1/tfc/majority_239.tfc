@@ -1,0 +1,11 @@
+.v f0,x4,x3,x2,x1,x0
+.i x4,x3,x2,x1,x0
+.o f0
+.c 0
+BEGIN
+t2 x3,f0
+t4 x1,x2,x3',f0
+t5 x0,x2,x3',x4,f0
+t5 x0,x1,x3',x4,f0
+t6 x0',x1,x2,x3',x4',f0
+END

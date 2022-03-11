@@ -1,0 +1,31 @@
+.v f4,f3,f2,f1,f0,x15,x14,x13,x12,x11,x10,x9,x8,x7,x6,x5,x4,x3,x2,x1,x0
+.i x15,x14,x13,x12,x11,x10,x9,x8,x7,x6,x5,x4,x3,x2,x1,x0
+.o f4,f3,f2,f1,f0
+.c 0,0,0,0,0
+BEGIN
+t1 f0
+t2 f0,f1
+t1 f2
+t2 f2,f3
+t3 x2,x3,x9
+t4 x4,x5,x9',f0
+t3 x2,x3,x9
+t4 x0,x4',x5,f0
+t4 x2,x3,x9',x11
+t4 x4,x5,x11',f1
+t4 x2,x3,x9',x11
+t4 x1,x4',x5,f1
+t2 x12',x6
+t3 x4',x6,x12
+t3 x5,x12',f2
+t3 x4',x6,x12
+t2 x12',x6
+t7 x2,x3,x4,x5,x9',x11',f2
+t2 x13',x7
+t3 x4',x7,x13
+t3 x5,x13',f3
+t3 x4',x7,x13
+t2 x13',x7
+t8 x2,x3,x4,x5,x9',x11',x12',f3
+t6 x3,x8,x10,x14,x15,f4
+END
